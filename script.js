@@ -1,4 +1,3 @@
-
 /* STEP 1*/
 /* Create the computer choice of rock, paper, scissors 
 Math.random returns a number greater than or equal to
@@ -34,45 +33,53 @@ if(Choice==="rock"){
     return "Not a valid weapon";
 }
 }
- let Choice=prompt("Give me your weapon >:)","");
- console.log(getHumanChoice(Choice));
-
 
  /* STEP 3*/
- //The system for play the game 5 times, count the scores of both the human and the computer, and decide a winner//
- const humanSelection=getHumanChoice();
- const computerSelection= getComputerChoice();
+ //The entire system for play the game 5 times, count the scores of both the human and the computer, and decide a winner//
+
+ // The logic for know who's the winner and the scores for one match//
  function playGame(){
     let humanScore=0;
     let computerScore=0;
 
     function playRound(computerChoice,humanChoice){
-        if(humanSelection===computerSelection){
+        if((humanSelection==="Paper" && computerSelection==="Rock")
+            || (humanSelection==="Rock" && computerSelection==="Scissors")
+            || (humanSelection==="Scissors" && computerSelection==="Paper")){
             humanScore++;
-            computerScore++;
-            return `Draw!, the score is  ${humanScore} for human
-            and ${computerScore} for computer`;
-        
-        
-        }else if((humanSelection==="Paper" && computerSelection==="Rock")
-                  || (humanSelection==="Rock" && computerSelection==="Scissors")
-                  || (humanSelection==="Scissors" && computerSelection==="Paper")){
-            humanScore++;
-            return `Human beats!, the score is  ${humanScore} for human
-            and ${computerScore} for computer`;
-        
-        
+
         }else if((computerSelection==="Paper" && humanSelection==="Rock")
             || (computerSelection==="Rock" && humanSelection==="Scissors")
             || (computerSelection==="Scissors" && humanSelection==="Paper")){
-        computerScore++;
-        return `Computer beats!, the score is  ${humanScore} for human
-        and ${computerScore} for computer`;
+            computerScore++;
+        
         }
-         }
-for(let i=0;i<=5;i++){
-    playRound(computerChoice,humanChoice);
-    console.log("banana");
+    }
+
+// Play 5 rounds, with their respective count of scores//
+for(let i=1;i<=5;i++){
+    console.log(`ROUND ${i}`);
+    Choice=prompt(`Give me your weapon for round ${i} >:)`," ");
+    humanSelection=getHumanChoice(Choice);
+    computerSelection=getComputerChoice();
+    console.log(`The human weapon for this round is: ${humanSelection}`);
+    console.log(`The computer weapon for this round is: ${computerSelection}`);
+    playRound(computerSelection,humanSelection);
+    console.log(`Human score is ${humanScore} and computer score is ${computerScore}`);
 }
- }
+
+//Decide who's the winner // 
+if(humanScore===computerScore){
+    console.log("FINAL");
+    console.log(`The score is ${humanScore} for the human and ${computerScore} for the computer, Draw!!! `);
+}else if(humanScore<computerScore){
+    console.log("FINAL");
+    console.log(`The score is ${computerScore} for the computer and ${humanScore} for the human, The computer wins!!! `);
+}else{
+    console.log("FINAL");
+    console.log(`The score is ${humanScore} for the human and ${computerScore} for the computer, The human wins!!! `);
+}
+
+}
+
  console.log(playGame());

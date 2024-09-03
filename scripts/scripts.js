@@ -33,6 +33,7 @@ let resultComputer=document.createElement("p");
 let resultFinal=document.createElement("p");
 
 let final= document.createElement("h3");
+final.classList.add("final-text");
 
 let draw= document.createElement("p");
 
@@ -126,17 +127,17 @@ function winnerCheck(){
     if(humanScore===computerScore){
       final.textContent="FINAL";
       results.appendChild(final);
-      draw.textContent=`Score is ${humanScore} for the human and ${computerScore} for the computer, Draw!!! `;
+      draw.textContent=`Score is ${humanScore} for the human and ${computerScore} for the computer. Draw!!! `;
       results.appendChild(draw);
   }else if(humanScore<computerScore){
       final.textContent="FINAL";
       results.appendChild(final);
-      computerWins.textContent=`Score is ${computerScore} for the computer and ${humanScore} for the human, The computer wins!!! `;
+      computerWins.textContent=`Score is ${computerScore} for the computer and ${humanScore} for the human. The computer wins!!! `;
       results.appendChild(computerWins);
   }else{
       final.textContent="FINAL";
       results.appendChild(final);
-      humanWins.textContent=`Score is ${humanScore} for the human and ${computerScore} for the computer  The human wins!!! `;
+      humanWins.textContent=`Score is ${humanScore} for the human and ${computerScore} for the computer. The human wins!!! `;
       results.appendChild(humanWins);
   }
   }

@@ -1,3 +1,62 @@
+function mostrarModal(humanSelection, computerSelection){
+
+  const modalContainer = document.querySelector('.modal-container');
+  const closeModal = document.getElementById('close');
+  const humanOptionPlaceholder = document.querySelector('.human-option-placeholder');
+  const computerOptionPlaceholder = document.querySelector('.computer-option-placeholder');
+  
+      let humanOptionImage= document.getElementById('human-option-placeholder');
+      let computerOptionImage= document.getElementById('computer-option-placeholder');
+      modalContainer.style.display='flex';
+  
+  
+      if(humanSelection==='Rock'){
+        humanOptionImage.src='../images/1.png';
+        humanOptionPlaceholder.appendChild(humanOptionImage);
+      }else if(humanSelection==='Paper'){
+        humanOptionImage.src='../images/2.png';
+        humanOptionPlaceholder.appendChild(humanOptionImage);
+      }else if(humanSelection==='Scissors'){
+        humanOptionImage.src='../images/3.png';
+        humanOptionPlaceholder.appendChild(humanOptionImage);
+      }
+
+      /*let option=getComputerChoice();
+
+      const imagesSources = [
+        '../images/1.png',
+        '../images/2.png',
+        '../images/3.png'
+      ];
+
+      while(option!==computerSelection){
+        for (img of imagesSources){
+          computerOptionImage.src= img;
+          computerOptionPlaceholder.appendChild(computerOptionImage);
+        }
+      }*/
+
+
+      if(computerSelection==='Rock'){
+        computerOptionImage.src='../images/1.png';
+        computerOptionPlaceholder.appendChild(computerOptionImage);
+      }else if(computerSelection==='Paper'){
+        computerOptionImage.src='../images/2.png';
+        computerOptionPlaceholder.appendChild(computerOptionImage);
+      }else if(computerSelection==='Scissors'){
+        computerOptionImage.src='../images/3.png';
+        computerOptionPlaceholder.appendChild(computerOptionImage);
+      }
+  
+  
+  closeModal.addEventListener('click', ()=>{
+    modalContainer.style.display='none';
+    humanOptionImage.src='';
+  
+  });
+
+}
+
 /* STEP 1*/
 /* Create the computer choice of rock, paper, scissors 
 Math.random returns a number greater than or equal to
@@ -46,7 +105,6 @@ let i=0;
 
 function playGame(){
 let humanScore=0;
-
 let computerScore=0;
 
     function playRound(computerSelection, humanSelection){
@@ -69,11 +127,13 @@ let computerScore=0;
 
 
 rockButton.addEventListener("click", () => {
+ 
     i+=1;
     console.log(i);
     let humanSelection="Rock";
     let computerSelection=getComputerChoice();
     playRound(computerSelection,humanSelection);
+
     resultHuman.textContent=`The human weapon for this round is: ${humanSelection}`;
         results.appendChild(resultHuman);
     resultComputer.textContent=`The computer weapon for this round is: ${computerSelection}`;
@@ -81,6 +141,7 @@ rockButton.addEventListener("click", () => {
     resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
       results.appendChild(resultFinal);
     winnerCheck();
+     mostrarModal(humanSelection,computerSelection);
 
 });
 
@@ -91,6 +152,7 @@ paperButton.addEventListener("click", () => {
     let humanSelection="Paper";
     let computerSelection=getComputerChoice();
     playRound(computerSelection,humanSelection);
+
     resultHuman.textContent=`The human weapon for this round is: ${humanSelection}`;
       results.appendChild(resultHuman);
     resultComputer.textContent=`The computer weapon for this round is: ${computerSelection}`;
@@ -98,6 +160,7 @@ paperButton.addEventListener("click", () => {
     resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
       results.appendChild(resultFinal);
     winnerCheck();
+    mostrarModal(humanSelection,computerSelection);
 
 });
 
@@ -108,6 +171,7 @@ scissorsButton.addEventListener("click", () => {
     let humanSelection="Scissors";
     let computerSelection=getComputerChoice();
     playRound(computerSelection,humanSelection);
+    
     resultHuman.textContent=`The human weapon for this round is: ${humanSelection}`;
       results.appendChild(resultHuman);
     resultComputer.textContent=`The computer weapon for this round is: ${computerSelection}`;
@@ -115,8 +179,11 @@ scissorsButton.addEventListener("click", () => {
     resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
       results.appendChild(resultFinal);
     winnerCheck();
+    mostrarModal(humanSelection,computerSelection);
 
 });
+
+
 
 function winnerCheck(){
   if(i>5){

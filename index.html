@@ -10,15 +10,15 @@
 <body>
     <h1>Rock, Paper, Scissors!!</h1>
     <div class="entire-container">
-    <h2>Play!</h2>
+    <button id="play-button">Play!</button>
     <h3>To play a game of 5 rounds, select an option:</h3>
     <div id="container">
-        <button id="Rock" class="optionButtons" ><img src="./images/1.png" alt="Rock" class="option-image Rock"></button>
-        <button id="Paper" class="optionButtons" ><img src="./images/2.png" alt="Paper" class="option-image Paper" ></button>
-        <button id="Scissors" class="optionButtons" ><img src="./images/3.png" alt="Scissors" class="option-image Scissors" ></button>
+        <button id="Rock" class="optionButtons" disabled ><img src="./images/1.png" alt="Rock" class="option-image Rock"></button>
+        <button id="Paper" class="optionButtons" disabled ><img src="./images/2.png" alt="Paper" class="option-image Paper" ></button>
+        <button id="Scissors" class="optionButtons" disabled ><img src="./images/3.png" alt="Scissors" class="option-image Scissors" ></button>
     </div>
     
-    <div id="Results">
+    
         
     </div>
 
@@ -35,6 +35,7 @@
                     <img src="" id="computer-option-placeholder" alt="">
                 </div>
             </div>
+            <div id="Results"></div>
             <button id="close">Close me</button>
         </div>
         

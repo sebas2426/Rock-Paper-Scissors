@@ -59,6 +59,11 @@ button{
     gap: 1rem;
 }
 
+.optionButtons:disabled{
+    cursor: not-allowed;
+    background-color: aqua;
+}
+
 #human-option-placeholder,
 #computer-option-placeholder{
     width: 200px;

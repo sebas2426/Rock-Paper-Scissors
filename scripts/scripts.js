@@ -212,9 +212,9 @@ function winnerCheck(){
 
 }
 
-let startGame= prompt("Do you want to start the game? Y/N");
-if(startGame==="Y"){
-    playGame();
-}else{
-  alert("Ok :(");
-};
+let startGame= document.getElementById('play-button');
+
+startGame.addEventListener('click',()=>{
+  playGame();
+  
+});

@@ -5,6 +5,7 @@ function mostrarModal(humanSelection, computerSelection){
   const humanOptionPlaceholder = document.querySelector('.human-option-placeholder');
   const computerOptionPlaceholder = document.querySelector('.computer-option-placeholder');
   
+  
       let humanOptionImage= document.getElementById('human-option-placeholder');
       let computerOptionImage= document.getElementById('computer-option-placeholder');
       modalContainer.style.display='flex';
@@ -21,20 +22,6 @@ function mostrarModal(humanSelection, computerSelection){
         humanOptionPlaceholder.appendChild(humanOptionImage);
       }
 
-      /*let option=getComputerChoice();
-
-      const imagesSources = [
-        '../images/1.png',
-        '../images/2.png',
-        '../images/3.png'
-      ];
-
-      while(option!==computerSelection){
-        for (img of imagesSources){
-          computerOptionImage.src= img;
-          computerOptionPlaceholder.appendChild(computerOptionImage);
-        }
-      }*/
 
 
       if(computerSelection==='Rock'){
@@ -52,7 +39,6 @@ function mostrarModal(humanSelection, computerSelection){
   closeModal.addEventListener('click', ()=>{
     modalContainer.style.display='none';
     humanOptionImage.src='';
-  
   });
 
 }
@@ -85,6 +71,8 @@ const paperButton= document.querySelector("#Paper");
 
 const scissorsButton= document.querySelector("#Scissors");
 
+const playAgainButton = document.getElementById('play-again');
+
 let resultHuman=document.createElement("p");
 
 let resultComputer=document.createElement("p");
@@ -102,12 +90,52 @@ let humanWins= document.createElement("p");
 
 let i=0;
 
+rockButton.addEventListener("click", () => {
+ 
+    i++;
+    console.log(i);
+    let humanSelection="Rock";
+    let computerSelection=getComputerChoice();
+    playRound(computerSelection,humanSelection);
 
-function playGame(){
-let humanScore=0;
-let computerScore=0;
+    resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
+    results.appendChild(resultFinal);
+    winnerCheck();
+     mostrarModal(humanSelection,computerSelection);
 
-    function playRound(computerSelection, humanSelection){
+});
+
+
+paperButton.addEventListener("click", () => {
+    i++;
+    console.log(i);
+    let humanSelection="Paper";
+    let computerSelection=getComputerChoice();
+    playRound(computerSelection,humanSelection);
+
+    resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
+    results.appendChild(resultFinal);
+    winnerCheck();
+    mostrarModal(humanSelection,computerSelection);
+
+});
+
+
+scissorsButton.addEventListener("click", () => {
+    i++;
+    console.log(i);
+    let humanSelection="Scissors";
+    let computerSelection=getComputerChoice();
+    playRound(computerSelection,humanSelection);
+    
+    resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
+    results.appendChild(resultFinal);
+    winnerCheck();
+    mostrarModal(humanSelection,computerSelection);
+
+});
+
+function playRound(computerSelection, humanSelection){
         if((humanSelection==="Paper" && computerSelection==="Rock")
             || (humanSelection==="Rock" && computerSelection==="Scissors")
             || (humanSelection==="Scissors" && computerSelection==="Paper")){
@@ -121,72 +149,9 @@ let computerScore=0;
         }
     }
 
-    rockButton.disabled=false;
-    paperButton.disabled=false;
-    scissorsButton.disabled=false;
-
-
-rockButton.addEventListener("click", () => {
- 
-    i+=1;
-    console.log(i);
-    let humanSelection="Rock";
-    let computerSelection=getComputerChoice();
-    playRound(computerSelection,humanSelection);
-
-    resultHuman.textContent=`The human weapon for this round is: ${humanSelection}`;
-        results.appendChild(resultHuman);
-    resultComputer.textContent=`The computer weapon for this round is: ${computerSelection}`;
-      results.appendChild(resultComputer);
-    resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
-      results.appendChild(resultFinal);
-    winnerCheck();
-     mostrarModal(humanSelection,computerSelection);
-
-});
-
-
-paperButton.addEventListener("click", () => {
-    i+=1;
-    console.log(i);
-    let humanSelection="Paper";
-    let computerSelection=getComputerChoice();
-    playRound(computerSelection,humanSelection);
-
-    resultHuman.textContent=`The human weapon for this round is: ${humanSelection}`;
-      results.appendChild(resultHuman);
-    resultComputer.textContent=`The computer weapon for this round is: ${computerSelection}`;
-      results.appendChild(resultComputer);
-    resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
-      results.appendChild(resultFinal);
-    winnerCheck();
-    mostrarModal(humanSelection,computerSelection);
-
-});
-
-
-scissorsButton.addEventListener("click", () => {
-    i+=1;
-    console.log(i);
-    let humanSelection="Scissors";
-    let computerSelection=getComputerChoice();
-    playRound(computerSelection,humanSelection);
-    
-    resultHuman.textContent=`The human weapon for this round is: ${humanSelection}`;
-      results.appendChild(resultHuman);
-    resultComputer.textContent=`The computer weapon for this round is: ${computerSelection}`;
-      results.appendChild(resultComputer);
-    resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
-      results.appendChild(resultFinal);
-    winnerCheck();
-    mostrarModal(humanSelection,computerSelection);
-
-});
-
-
-
 function winnerCheck(){
   if(i>5){
+    playAgainButton.style.display='block';
     rockButton.disabled=true;
     paperButton.disabled=true;
     scissorsButton.disabled=true;
@@ -207,9 +172,25 @@ function winnerCheck(){
       humanWins.textContent=`Score is ${humanScore} for the human and ${computerScore} for the computer. The human wins!!! `;
       results.appendChild(humanWins);
   }
+  i=0;
   }
+  
 }
 
+let humanScore=0;
+let computerScore=0;
+
+function playGame(){
+  playAgainButton.style.display='none';
+  humanScore=0;
+  computerScore=0;
+  final.textContent='';
+  humanWins.textContent='';
+  computerWins.textContent='';
+
+    rockButton.disabled=false;
+    paperButton.disabled=false;
+    scissorsButton.disabled=false;
 }
 
 let startGame= document.getElementById('play-button');
@@ -217,4 +198,7 @@ let startGame= document.getElementById('play-button');
 startGame.addEventListener('click',()=>{
   playGame();
   
+});
+playAgainButton.addEventListener('click',()=>{
+  playGame();
 });

@@ -1,6 +1,6 @@
 function mostrarModal(humanSelection, computerSelection){
 
-  const modalContainer = document.querySelector('.modal-container');
+  
   const closeModal = document.getElementById('close');
   const humanOptionPlaceholder = document.querySelector('.human-option-placeholder');
   const computerOptionPlaceholder = document.querySelector('.computer-option-placeholder');
@@ -64,6 +64,8 @@ Math.random returns a number greater than or equal to
 }
 
 const results= document.querySelector("#Results");
+
+const modalContainer = document.querySelector('.modal-container');
 
 const rockButton= document.querySelector("#Rock");
 
@@ -185,6 +187,7 @@ function playGame(){
   humanScore=0;
   computerScore=0;
   final.textContent='';
+  draw.textContent='';
   humanWins.textContent='';
   computerWins.textContent='';
 
@@ -201,4 +204,7 @@ startGame.addEventListener('click',()=>{
 });
 playAgainButton.addEventListener('click',()=>{
   playGame();
+  modalContainer.style.display='none';
+  
+
 });

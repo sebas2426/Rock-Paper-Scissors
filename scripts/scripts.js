@@ -1,7 +1,7 @@
 function mostrarModal(humanSelection, computerSelection){
 
   
-  const closeModal = document.getElementById('close');
+  const closeModal = document.getElementById('close-button');
   const humanOptionPlaceholder = document.querySelector('.human-option-placeholder');
   const computerOptionPlaceholder = document.querySelector('.computer-option-placeholder');
   
@@ -73,7 +73,7 @@ const paperButton= document.querySelector("#Paper");
 
 const scissorsButton= document.querySelector("#Scissors");
 
-const playAgainButton = document.getElementById('play-again');
+const playAgainButton = document.getElementById('play-again-button');
 
 let resultHuman=document.createElement("p");
 

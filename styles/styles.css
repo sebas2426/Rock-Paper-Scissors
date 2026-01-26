@@ -76,13 +76,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 button{
     border-radius: 0.5rem;
-    background-color: white;
     cursor: pointer;
     padding: 0.2rem;
-    border: 1px solid black;
+   
+  
 }
-
-
 
 .modal-container{
     display: flex;
@@ -118,9 +116,19 @@ button{
     gap: 1rem;
 }
 
+.optionButtons{
+   box-shadow: 0 9px #999;
+}
+
+.optionButtons:active{
+box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .optionButtons:disabled{
-    cursor: not-allowed;
-    background-color: rgb(245, 27, 19);
+    cursor: initial;
+    background-color: #666;
+    opacity: 0.8;
 }
 
 #human-option-placeholder,
@@ -128,9 +136,44 @@ button{
     width: 200px;
 }
 
-.buttons{
+.buttons-result{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+}
+
+#play-button{
+  background-color: white;
+  border: 2px solid #04AA6D;
+  padding: 0.5rem 1.5rem;
+  transition-duration:0.4s;
+}
+#play-button:hover{
+  background-color: #04AA6D;
+  color: white;
+}
+
+#play-again-button{
+  background-color: white;
+  border: 2px solid #04AA6D;
+  padding: 0.2rem 0.8rem;
+  transition-duration:0.2s;
+}
+
+#play-again-button:hover{
+  background-color: #04AA6D;
+  color: white;
+}
+
+#close-button{
+  background-color: white;
+  border: 2px solid #f44336;
+  padding: 0.2rem 0.8rem;
+  transition-duration:0.2s;
+}
+
+#close-button:hover{
+  background-color: #f44336;
+  color: white;
 }

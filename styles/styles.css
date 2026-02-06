@@ -24,7 +24,7 @@ body {
 
 /* 6. Improve media defaults */
 img, picture, video, canvas, svg {
-  display: block;
+  
   max-width: 100%;
 }
 
@@ -110,10 +110,13 @@ button{
 }
 
 .options-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  width: 80%;
+  height: auto;
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 25px repeat(4, 60px);
+    
 }
 
 .optionButtons{
@@ -131,11 +134,29 @@ box-shadow: 0 5px #666;
     opacity: 0.8;
 }
 
-#human-option-placeholder,
-#computer-option-placeholder{
+#human-option-placeholder{
     width: 200px;
+    grid-column: 1/2;
+    grid-row: 2/5;
+   
 }
 
+
+
+.computer-option-placeholder{
+ 
+  grid-column: 3/4;
+  grid-row: 2/5;
+  background-color: red;
+}
+
+
+#computer-option-placeholder{
+    width: 200px;
+    grid-column: 3/4;
+    grid-row: 2/5;
+   
+}
 .buttons-result{
     display: flex;
     justify-content: center;
@@ -176,4 +197,28 @@ box-shadow: 0 5px #666;
 #close-button:hover{
   background-color: #f44336;
   color: white;
+}
+
+#vs{
+  grid-row: 3;
+  grid-column: 2/3;
+}
+.point_image {
+  animation-duration: 1s;
+  animation-name: slide-in;
+  width: 2rem;
+  grid-row: 3/4;
+  grid-column: 2;
+}
+
+@keyframes slide-in {
+  from {
+    translate: 0 15vh;
+    scale: 150% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
 }

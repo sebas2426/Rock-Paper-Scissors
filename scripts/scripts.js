@@ -88,6 +88,8 @@ const HumanPointIcon = document.querySelector('.point_image.human');
 
 const ComputerPointIcon = document.querySelector('.point_image.computer');
 
+const DrawIcon = document.getElementById('draw');
+
 let draw= document.createElement("p");
 
 let computerWins= document.createElement("p");
@@ -146,6 +148,7 @@ function playRound(computerSelection, humanSelection){
             || (humanSelection==="Rock" && computerSelection==="Scissors")
             || (humanSelection==="Scissors" && computerSelection==="Paper")){
             humanScore++;
+            DrawIcon.style.display='none';
             ComputerPointIcon.style.display='none'
             HumanPointIcon.style.display='block'
 
@@ -154,12 +157,14 @@ function playRound(computerSelection, humanSelection){
             || (computerSelection==="Rock" && humanSelection==="Scissors")
             || (computerSelection==="Scissors" && humanSelection==="Paper")){
             computerScore++;
+            DrawIcon.style.display='none';
             HumanPointIcon.style.display='none'
             ComputerPointIcon.style.display='block'
         
         }else{
           HumanPointIcon.style.display='none'
-            ComputerPointIcon.style.display='none'
+          ComputerPointIcon.style.display='none'
+          DrawIcon.style.display='block';
         }
     }
 

@@ -12,26 +12,26 @@ function mostrarModal(humanSelection, computerSelection){
   
   
       if(humanSelection==='Rock'){
-        humanOptionImage.src='../images/1.png';
+        humanOptionImage.src='../images/1.webp';
         humanOptionPlaceholder.appendChild(humanOptionImage);
       }else if(humanSelection==='Paper'){
-        humanOptionImage.src='../images/2.png';
+        humanOptionImage.src='../images/2.webp';
         humanOptionPlaceholder.appendChild(humanOptionImage);
       }else if(humanSelection==='Scissors'){
-        humanOptionImage.src='../images/3.png';
+        humanOptionImage.src='../images/3.webp';
         humanOptionPlaceholder.appendChild(humanOptionImage);
       }
 
 
 
       if(computerSelection==='Rock'){
-        computerOptionImage.src='../images/1.png';
+        computerOptionImage.src='../images/1.webp';
         computerOptionPlaceholder.appendChild(computerOptionImage);
       }else if(computerSelection==='Paper'){
-        computerOptionImage.src='../images/2.png';
+        computerOptionImage.src='../images/2.webp';
         computerOptionPlaceholder.appendChild(computerOptionImage);
       }else if(computerSelection==='Scissors'){
-        computerOptionImage.src='../images/3.png';
+        computerOptionImage.src='../images/3.webp';
         computerOptionPlaceholder.appendChild(computerOptionImage);
       }
   

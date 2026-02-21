@@ -1,0 +1,9 @@
+{
+    "titles":{
+        "main":"Piedra, Papel o Tijeras!"
+    },
+    "descriptions":{
+        "rounds": "Juega una ronda de 5 turnos contra la máquina",
+        "howToPlay": "Para empezar una ronda, haz click en el botón Jugar y selecciona tu opción"
+    }
+}

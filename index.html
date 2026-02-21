@@ -8,15 +8,19 @@
     <script src="./scripts/scripts.js" defer></script>
 </head>
 <body>
-    <h1>Rock, Paper, Scissors!!</h1>
+    <h1 data-section="titles" data-value="main">Rock, Paper, Scissors!!</h1>
+    <div class="language-container">
+        <button  data-language="es">ES</button>
+        <button data-language="en" >EN</button>
+    </div>
     <div class="entire-container">
-        <h4>Play a game of 5 rounds against the computer</h4>
-        <h4>To start the game, click on the Play button bellow and select your option:</h4>
+        <h4 data-section="descriptions" data-value="rounds" >Play a game of 5 rounds against the computer</h4>
+        <h4 data-section="descriptions" data-value="howToPlay" >To start the game, click on the Play button bellow and select your option:</h4>
         <button id="play-button">Play!</button>
     <div id="container">
-        <button id="Rock" class="optionButtons" disabled ><img src="./images/1.png" alt="Rock" class="option-image Rock"></button>
-        <button id="Paper" class="optionButtons" disabled ><img src="./images/2.png" alt="Paper" class="option-image Paper" ></button>
-        <button id="Scissors" class="optionButtons" disabled ><img src="./images/3.png" alt="Scissors" class="option-image Scissors" ></button>
+        <button id="Rock" class="optionButtons" disabled ><img src="./images/1.webp" alt="Rock" class="option-image Rock"></button>
+        <button id="Paper" class="optionButtons" disabled ><img src="./images/2.webp" alt="Paper" class="option-image Paper" ></button>
+        <button id="Scissors" class="optionButtons" disabled ><img src="./images/3.webp" alt="Scissors" class="option-image Scissors" ></button>
     </div>    
     </div>
 

@@ -1,0 +1,25 @@
+{
+    "titles":{
+        "main":"Rock, Paper, Scissors!"
+    },
+    "descriptions":{
+        "rounds": "Play a game of 5 rounds against the computer",
+        "howToPlay": "To start the game, click on the Play button bellow and select your option:",
+        "playButton": "Play!"
+    },
+    "gameElements":{
+        "humanWeapon":"Player",
+        "computerWeapon":"Computer",
+        "draw":"Draw!"
+    },
+    "gameButtons":{
+        "playAgain":"Play Again",
+        "close": "Close"
+    },
+    "gameTexts":{
+        "resultRound": "Score",
+        "finalDraw": "Draw!!",
+        "finalComputer": "The Computer Wins!!",
+        "finalHuman": "The Player Wins!!"
+    }
+}

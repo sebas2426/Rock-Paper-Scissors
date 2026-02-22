@@ -28,10 +28,14 @@
         <div class="modal">
             <div class="options-container">
                 <div class="human-option-placeholder">
-                    <p data-section="gameElements" data-value="humanWeapon" class="weo" >Human</p>
+                    <p data-section="gameElements" data-value="humanWeapon" class="weo" >Player</p>
                     
                     <img class="point_image human" src="./images/point.png" style="display: none;" alt="">
                     <img src="" id="human-option-placeholder" alt="">
+                    <div class="scores human">
+                        <h3 data-section="gameTexts" data-value="resultRound" >Score</h3>
+                        <p id="human-score" >1</p>
+                    </div>
                 </div>
     
                 <p id="vs">VS</p>
@@ -42,10 +46,17 @@
                     
                     <img class="point_image computer" src="./images/point.png" style="display: none;" alt="">
                     <img src="" id="computer-option-placeholder" alt="">
+                    <div class="scores computer">
+                        <h3 data-section="gameTexts" data-value="resultRound" >Score</h3>
+                        <p id="computer-score" >1</p>
+                    </div>
                     
                 </div>
             </div>
             <div id="Results"></div>
+            <p data-section="gameTexts" data-value="finalComputer" id="final-computer" style="display: none;" >The Computer Wins!!</p>
+            <p data-section="gameTexts" data-value="finalDraw" id="final-draw" style="display: none;" >Draw!!</p>
+            <p data-section="gameTexts" data-value="finalHuman" id="final-human" style="display: none;" >You Win!!</p>
             <div class="buttons-result">
                 <button data-section="gameButtons" data-value="playAgain" id="play-again-button">Play Again?</button>
                 <button  data-section="gameButtons" data-value="close" id="close-button">Close me</button>

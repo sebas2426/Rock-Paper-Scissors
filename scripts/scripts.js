@@ -79,7 +79,9 @@ let resultHuman=document.createElement("p");
 
 let resultComputer=document.createElement("p");
 
-let resultFinal=document.createElement("p");
+let scoreHuman= document.getElementById('human-score');
+
+let scoreComputer= document.getElementById('computer-score');
 
 let final= document.createElement("h3");
 final.classList.add("final-text");
@@ -90,13 +92,21 @@ const ComputerPointIcon = document.querySelector('.point_image.computer');
 
 const DrawIcon = document.getElementById('draw');
 
-let draw= document.createElement("p");
+let drawWins = document.getElementById('final-draw');
 
-let computerWins= document.createElement("p");
+let computerWins= document.getElementById('final-computer')
 
-let humanWins= document.createElement("p");
+let humanWins= document.getElementById('final-human');
 
 let i=0;
+
+const langButtons = document.querySelectorAll("[data-language]");
+
+const textsToChange = document.querySelectorAll("[data-section]");
+
+
+
+
 
 rockButton.addEventListener("click", () => {
  
@@ -106,8 +116,9 @@ rockButton.addEventListener("click", () => {
     let computerSelection=getComputerChoice();
     playRound(computerSelection,humanSelection);
 
-    resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
-    results.appendChild(resultFinal);
+    scoreHuman.innerHTML= humanScore;
+    scoreComputer.innerHTML= computerScore;
+
     winnerCheck();
      mostrarModal(humanSelection,computerSelection);
 
@@ -121,8 +132,9 @@ paperButton.addEventListener("click", () => {
     let computerSelection=getComputerChoice();
     playRound(computerSelection,humanSelection);
 
-    resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
-    results.appendChild(resultFinal);
+    scoreHuman.innerHTML= humanScore;
+    scoreComputer.innerHTML= computerScore;
+
     winnerCheck();
     mostrarModal(humanSelection,computerSelection);
 
@@ -136,8 +148,9 @@ scissorsButton.addEventListener("click", () => {
     let computerSelection=getComputerChoice();
     playRound(computerSelection,humanSelection);
     
-    resultFinal.textContent=`Human score is ${humanScore} and computer score is ${computerScore}`;
-    results.appendChild(resultFinal);
+   scoreHuman.innerHTML= humanScore;
+    scoreComputer.innerHTML= computerScore;
+
     winnerCheck();
     mostrarModal(humanSelection,computerSelection);
 
@@ -178,18 +191,20 @@ function winnerCheck(){
     if(humanScore===computerScore){
       final.textContent="FINAL";
       results.appendChild(final);
-      draw.textContent=`Score is ${humanScore} for the human and ${computerScore} for the computer. Draw!!! `;
-      results.appendChild(draw);
+     
+      drawWins.style.display='block';
+      
   }else if(humanScore<computerScore){
       final.textContent="FINAL";
       results.appendChild(final);
-      computerWins.textContent=`Score is ${computerScore} for the computer and ${humanScore} for the human. The computer wins!!! `;
-      results.appendChild(computerWins);
+     
+      computerWins.style.display='block';
+      
   }else{
       final.textContent="FINAL";
       results.appendChild(final);
-      humanWins.textContent=`Score is ${humanScore} for the human and ${computerScore} for the computer. The human wins!!! `;
-      results.appendChild(humanWins);
+    
+       humanWins.style.display='block';
   }
   i=0;
   }
@@ -204,9 +219,10 @@ function playGame(){
   humanScore=0;
   computerScore=0;
   final.textContent='';
-  draw.textContent='';
-  humanWins.textContent='';
-  computerWins.textContent='';
+  drawWins.style.display='none';
+      computerWins.style.display='none';
+       humanWins.style.display='none';
+  
 
     rockButton.disabled=false;
     paperButton.disabled=false;
@@ -224,4 +240,21 @@ playAgainButton.addEventListener('click',()=>{
   modalContainer.style.display='none';
   
 
+});
+
+langButtons.forEach((button) =>{
+  button.addEventListener('click',()=>{
+    console.log(button.dataset.language);
+    fetch(`../languages/${button.dataset.language}.json`)
+    .then(result => result.json())
+    .then(data =>{
+      textsToChange.forEach((element)=>{
+        console.log(textsToChange);
+        const section = element.dataset.section;
+        const value = element.dataset.value;
+
+        element.innerHTML = data[section][value];
+      })
+    })
+  })
 });

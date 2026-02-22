@@ -112,13 +112,14 @@ button{
 }
 
 .options-container{
-  width: 100%;
+  width: 90%;
   height: auto;
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   grid-template-rows: 25px repeat(4, 60px);
   border: 1px solid black;
   border-radius: 2rem;
+  padding: 1rem;
     
 }
 

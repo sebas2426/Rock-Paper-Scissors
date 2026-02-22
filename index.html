@@ -16,7 +16,7 @@
     <div class="entire-container">
         <h4 data-section="descriptions" data-value="rounds" >Play a game of 5 rounds against the computer</h4>
         <h4 data-section="descriptions" data-value="howToPlay" >To start the game, click on the Play button bellow and select your option:</h4>
-        <button id="play-button">Play!</button>
+        <button data-section="descriptions" data-value="playButton"  id="play-button">Play!</button>
     <div id="container">
         <button id="Rock" class="optionButtons" disabled ><img src="./images/1.webp" alt="Rock" class="option-image Rock"></button>
         <button id="Paper" class="optionButtons" disabled ><img src="./images/2.webp" alt="Paper" class="option-image Paper" ></button>
@@ -28,17 +28,17 @@
         <div class="modal">
             <div class="options-container">
                 <div class="human-option-placeholder">
-                    <p class="weo" >Human Weapon</p>
+                    <p data-section="gameElements" data-value="humanWeapon" class="weo" >Human</p>
                     
                     <img class="point_image human" src="./images/point.png" style="display: none;" alt="">
                     <img src="" id="human-option-placeholder" alt="">
                 </div>
     
                 <p id="vs">VS</p>
-                <p id="draw">Draw!</p>
+                <p data-section="gameElements" data-value="draw" id="draw">Draw!</p>
     
                 <div class="computer-option-placeholder">
-                    <p class="weo">Computer Weapon</p>
+                    <p data-section="gameElements" data-value="computerWeapon" class="weo">Computer</p>
                     
                     <img class="point_image computer" src="./images/point.png" style="display: none;" alt="">
                     <img src="" id="computer-option-placeholder" alt="">
@@ -47,8 +47,8 @@
             </div>
             <div id="Results"></div>
             <div class="buttons-result">
-                <button id="play-again-button">Play Again?</button>
-                <button id="close-button">Close me</button>
+                <button data-section="gameButtons" data-value="playAgain" id="play-again-button">Play Again?</button>
+                <button  data-section="gameButtons" data-value="close" id="close-button">Close me</button>
             </div>
         </div>
         

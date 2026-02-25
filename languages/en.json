@@ -18,6 +18,7 @@
     },
     "gameTexts":{
         "resultRound": "Score",
+        "numberRounds": "Round ",
         "finalDraw": "Draw!!",
         "finalComputer": "The Computer Wins!!",
         "finalHuman": "The Player Wins!!"

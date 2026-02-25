@@ -79,6 +79,8 @@ let resultHuman=document.createElement("p");
 
 let resultComputer=document.createElement("p");
 
+let numberRounds = document.getElementById('number-rounds');
+
 let scoreHuman= document.getElementById('human-score');
 
 let scoreComputer= document.getElementById('computer-score');
@@ -111,7 +113,7 @@ const textsToChange = document.querySelectorAll("[data-section]");
 rockButton.addEventListener("click", () => {
  
     i++;
-    console.log(i);
+    numberRounds.innerHTML=i;
     let humanSelection="Rock";
     let computerSelection=getComputerChoice();
     playRound(computerSelection,humanSelection);
@@ -127,7 +129,7 @@ rockButton.addEventListener("click", () => {
 
 paperButton.addEventListener("click", () => {
     i++;
-    console.log(i);
+    numberRounds.innerHTML=i;
     let humanSelection="Paper";
     let computerSelection=getComputerChoice();
     playRound(computerSelection,humanSelection);
@@ -143,7 +145,7 @@ paperButton.addEventListener("click", () => {
 
 scissorsButton.addEventListener("click", () => {
     i++;
-    console.log(i);
+    numberRounds.innerHTML=i;
     let humanSelection="Scissors";
     let computerSelection=getComputerChoice();
     playRound(computerSelection,humanSelection);
@@ -182,7 +184,7 @@ function playRound(computerSelection, humanSelection){
     }
 
 function winnerCheck(){
-  if(i>5){
+  if(i>=5){
     playAgainButton.style.display='block';
     rockButton.disabled=true;
     paperButton.disabled=true;

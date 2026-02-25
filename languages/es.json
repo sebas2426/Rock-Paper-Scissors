@@ -18,6 +18,7 @@
     },
     "gameTexts":{
         "resultRound": "Puntaje",
+        "numberRounds": "Ronda ",
         "finalDraw": "¡¡Empate!!",
         "finalComputer": "¡¡La computadora gana!!",
         "finalHuman": "¡¡El humano gana!!"

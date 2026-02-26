@@ -9,7 +9,7 @@
     },
     "gameElements":{
         "humanWeapon":"Jugador",
-        "computerWeapon":"Computadora",
+        "computerWeapon":"Máquina",
         "draw":"¡Empate!"
     },
     "gameButtons":{

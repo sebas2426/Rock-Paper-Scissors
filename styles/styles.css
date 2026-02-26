@@ -82,6 +82,12 @@ button{
   
 }
 
+.button-languages{
+  font-size: 1.4em;
+  border: 0;
+  background-color: white;
+}
+
 .modal-container{
     display: flex;
     justify-content: center;
@@ -119,12 +125,13 @@ button{
   grid-template-rows: 25px repeat(4, 60px);
   border: 1px solid black;
   border-radius: 2rem;
-  padding: 1rem;
+  padding: 1.5rem;
     
 }
 
 .optionButtons{
    box-shadow: 0 9px #999;
+  
 }
 
 .optionButtons:active{
@@ -179,10 +186,12 @@ box-shadow: 0 5px #666;
 .rounds{
   grid-column: 2 ;
   grid-row: 5 ;
+  align-self:flex-end;
 }
 .weo{
   grid-row: 1/2;
   grid-column: 3;
+  align-self: flex-start;
 }
 
 .point_image {
@@ -269,5 +278,43 @@ box-shadow: 0 5px #666;
   to {
     translate: 0 0;
     scale: 100% 1;
+  }
+}
+
+@media (max-width:600px){
+
+  .modal{
+    width: 100%;
+    margin: 1rem;
+  }
+
+  .options-container{
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .human-option-placeholder,
+  .computer-option-placeholder{
+    grid-row: 2/5;
+    height: 100%;
+   
+    
+  }
+
+  .point_image{
+    grid-column: 1/4;
+    align-self: flex-start;
+    width: 1rem;
+    opacity: 0.8;
+  }
+
+  #human-option-placeholder,
+  #computer-option-placeholder{
+    height: 100%;
+  }
+  
+
+  #container{
+    padding: 1rem;
   }
 }

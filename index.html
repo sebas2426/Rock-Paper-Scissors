@@ -8,11 +8,11 @@
     <script src="./scripts/scripts.js" defer></script>
 </head>
 <body>
-    <h1 data-section="titles" data-value="main">Rock, Paper, Scissors!!</h1>
     <div class="language-container">
-        <button  data-language="es">ES</button>
-        <button data-language="en" >EN</button>
+        <button class="button-languages" data-language="es">🇪🇸</button>
+        <button class="button-languages" data-language="en" >🇬🇧</button>
     </div>
+    <h1 data-section="titles" data-value="main">Rock, Paper, Scissors!!</h1>
     <div class="entire-container">
         <h4 data-section="descriptions" data-value="rounds" >Play a game of 5 rounds against the computer</h4>
         <h4 data-section="descriptions" data-value="howToPlay" >To start the game, click on the Play button bellow and select your option:</h4>
@@ -28,7 +28,7 @@
         <div class="modal">
             <div class="options-container">
                 <div class="human-option-placeholder">
-                    <p data-section="gameElements" data-value="humanWeapon" class="weo" >Player</p>
+                    <h3 data-section="gameElements" data-value="humanWeapon" class="weo" >Player</h3>
                     
                     <img class="point_image human" src="./images/point.png" style="display: none;" alt="">
                     <img src="" id="human-option-placeholder" alt="">
@@ -38,15 +38,15 @@
                     </div>
                 </div>
     
-                <p id="vs">VS</p>
-                <p data-section="gameElements" data-value="draw" id="draw">Draw!</p>
+                <p style="font-style: italic;" id="vs">VS</p>
+                <h4 style="font-style: italic;" data-section="gameElements" data-value="draw" id="draw">Draw!</h4>
                 <div class="rounds">
-                    <p data-section="gameTexts" data-value="numberRounds" >Round: </p>
+                    <h3 data-section="gameTexts" data-value="numberRounds" >Round </h3>
                     <p id="number-rounds" >1</p>
                 </div>
     
                 <div class="computer-option-placeholder">
-                    <p data-section="gameElements" data-value="computerWeapon" class="weo">Computer</p>
+                    <h3 data-section="gameElements" data-value="computerWeapon" class="weo">Computer</h3>
                     
                     <img class="point_image computer" src="./images/point.png" style="display: none;" alt="">
                     <img src="" id="computer-option-placeholder" alt="">

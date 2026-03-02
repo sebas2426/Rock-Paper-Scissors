@@ -12,13 +12,13 @@ function mostrarModal(humanSelection, computerSelection){
   
   
       if(humanSelection==='Rock'){
-        humanOptionImage.src='../images/1.webp';
+        humanOptionImage.src='../Rock-Paper-Scissors/images/1.webp';
         humanOptionPlaceholder.appendChild(humanOptionImage);
       }else if(humanSelection==='Paper'){
-        humanOptionImage.src='../images/2.webp';
+        humanOptionImage.src='../Rock-Paper-Scissors/images/2.webp';
         humanOptionPlaceholder.appendChild(humanOptionImage);
       }else if(humanSelection==='Scissors'){
-        humanOptionImage.src='../images/3.webp';
+        humanOptionImage.src='../Rock-Paper-Scissors/images/3.webp';
         humanOptionPlaceholder.appendChild(humanOptionImage);
       }
 

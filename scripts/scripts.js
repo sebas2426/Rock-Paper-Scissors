@@ -25,13 +25,13 @@ function mostrarModal(humanSelection, computerSelection){
 
 
       if(computerSelection==='Rock'){
-        computerOptionImage.src='../images/1.webp';
+        computerOptionImage.src='../Rock-Paper-Scissors/images/1.webp';
         computerOptionPlaceholder.appendChild(computerOptionImage);
       }else if(computerSelection==='Paper'){
-        computerOptionImage.src='../images/2.webp';
+        computerOptionImage.src='../Rock-Paper-Scissors/images/2.webp';
         computerOptionPlaceholder.appendChild(computerOptionImage);
       }else if(computerSelection==='Scissors'){
-        computerOptionImage.src='../images/3.webp';
+        computerOptionImage.src='../Rock-Paper-Scissors/images/3.webp';
         computerOptionPlaceholder.appendChild(computerOptionImage);
       }
   

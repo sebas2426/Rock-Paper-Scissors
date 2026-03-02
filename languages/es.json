@@ -1,6 +1,7 @@
 {
     "titles":{
-        "main":"¡Piedra, Papel o Tijeras!"
+        "main":"¡Piedra, Papel o Tijeras!",
+        "little-title":"Piedra, Papel o Tijeras"
     },
     "descriptions":{
         "rounds": "Juega una ronda de 5 turnos contra la máquina",

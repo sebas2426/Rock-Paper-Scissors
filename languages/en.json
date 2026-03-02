@@ -1,6 +1,7 @@
 {
     "titles":{
-        "main":"Rock, Paper, Scissors!"
+        "main":"Rock, Paper, Scissors!",
+        "little-title":"Rock, Paper, Scissors"
     },
     "descriptions":{
         "rounds": "Play a game of 5 rounds against the computer",

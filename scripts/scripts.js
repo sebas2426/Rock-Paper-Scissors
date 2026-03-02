@@ -247,7 +247,7 @@ playAgainButton.addEventListener('click',()=>{
 langButtons.forEach((button) =>{
   button.addEventListener('click',()=>{
     console.log(button.dataset.language);
-    fetch(`../languages/${button.dataset.language}.json`)
+    fetch(`../Rock-Paper-Scissors/languages/${button.dataset.language}.json`)
     .then(result => result.json())
     .then(data =>{
       textsToChange.forEach((element)=>{

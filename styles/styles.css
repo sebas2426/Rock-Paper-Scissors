@@ -297,20 +297,38 @@ box-shadow: 0 5px #666;
   .computer-option-placeholder{
     grid-row: 2/5;
     height: 100%;
-   
+   grid-template-columns: 1fr;
+   grid-template-rows: 15px 2rem 1fr 1fr;
     
   }
 
+  .weo{
+    grid-row: 2/3;
+    grid-column: 3;
+    
+  }
+
+
+
   .point_image{
-    grid-column: 1/4;
+    grid-column: 2/4;
     align-self: flex-start;
     width: 1rem;
     opacity: 0.8;
   }
 
+  .scores.computer,
+  .scores.human{
+    grid-row: 4;
+    grid-column: 3;
+  }
+
   #human-option-placeholder,
   #computer-option-placeholder{
     height: 100%;
+    width: 100%;
+    grid-row: 3;
+    grid-column: 3;
   }
   
 
